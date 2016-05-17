@@ -31,7 +31,7 @@ class CodeBuilder:
     def get_globals(self):
         """ 将定义好的render_function返回到global_namespace中 """
         assert self.cur_indent == 0
-        python_code = str(self.code)
+        python_code = str(self)
         global_namespace = {}
         # 执行完exec后，global_namespace中就存储了指向render_function的引用
         exec(python_code, global_namespace)
